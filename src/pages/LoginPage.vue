@@ -1,8 +1,14 @@
 <template>
-  <q-page class="flex flex-center">
-    <div class="q-pa-md row items-start q-gutter-md">
-      <q-card-actions vertical>
-        <q-input v-model="email" filled type="email" label="Email" />
+    <div class="q-pa-md"
+    style="
+        max-width: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 150px"
+    >
+      <div class="q-gutter-y-md column">
+        <q-input v-model="email" filled type="email" label="email" />
         <q-input v-model="password" filled :type="isPwd ? 'password' : 'text'" label="senha">
           <template v-slot:append>
             <q-icon
@@ -12,11 +18,10 @@
             />
           </template>
         </q-input>
-        <q-btn color="primary" label="LOGIN" />
-        <q-btn flat color="primary" label="Esqueci minha senha" />
-      </q-card-actions>
+          <q-btn color="primary" label="Login" />
+          <q-btn flat color="primary" label="Esqueci minha senha" />
+      </div>
     </div>
-  </q-page>
 </template>
 
 <script>
