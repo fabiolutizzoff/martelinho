@@ -5,7 +5,7 @@
         <div class="text-h4">Entrar</div>
       </q-card-section>
       <q-card-section class="q-pt-none">
-        Seu app profissional de martelinho de ouro
+        Seu app profissional do martelinho de ouro
       </q-card-section>
       <q-separator inset />
       <q-card-section>
@@ -22,18 +22,18 @@
               />
             </template>
           </q-input>
-            <q-btn flat color="primary" label="Esqueceu a senha?" no-caps />
-          <q-card-actions vertical>
-            <q-btn color="red" text-color="white" label="Entrar" class="q-mb-md" no-caps/>
+            <q-btn flat color="primary" label="Esqueceu a senha?" class="q-mb-md" no-caps />
+          <q-card-actions vertical style="padding: 0px">
+            <q-btn color="red" text-color="white" label="Entrar" class="q-mb-md" no-caps />
           </q-card-actions>
         </q-form>
           <q-separator inset class="q-mb-md" />
-          <q-card-actions vertical>
+          <q-card-actions vertical style="padding: 0px">
             <q-btn outline color="red" text-color="red" icon="mail" label="Entrar com Google" class="q-mb-md" no-caps/>
           </q-card-actions>
       </q-card-section>
-      <q-card-section class="q-pt-none">
-        Novo no app?
+      <q-card-section class="q-pt-none" align="center">
+          Novo no app? Cadastre-se
       </q-card-section>
     </q-card-section>
   </q-page>
