@@ -1,27 +1,42 @@
 <template>
-    <div class="q-pa-md"
-    style="
-        max-width: 400px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 150px"
-    >
-      <div class="q-gutter-y-md column">
-        <q-input v-model="email" filled type="email" label="email" />
-        <q-input v-model="password" filled :type="isPwd ? 'password' : 'text'" label="senha">
-          <template v-slot:append>
-            <q-icon
-              :name="isPwd ? 'visibility_off' : 'visibility'"
-              class="cursor-pointer"
-              @click="isPwd = !isPwd"
-            />
-          </template>
-        </q-input>
-          <q-btn color="primary" label="Login" />
-          <q-btn flat color="primary" label="Esqueci minha senha" />
-      </div>
-    </div>
+  <q-page class="flex row flex-center">
+    <q-card-section class="my-card col-12 col-sm-8 col-md-6" style="max-width: 400px">
+      <q-card-section>
+        <div class="text-h4">Entrar</div>
+      </q-card-section>
+      <q-card-section class="q-pt-none">
+        Seu app profissional de martelinho de ouro
+      </q-card-section>
+      <q-separator inset />
+      <q-card-section>
+        <q-form>
+          <q-badge color="secondary">Usuário</q-badge>
+          <q-input outlined v-model="text" class="q-mb-md" />
+          <q-badge color="secondary">Senha</q-badge>
+          <q-input outlined v-model="password" :type="isPwd ? 'password' : 'text'">
+            <template v-slot:append>
+              <q-icon
+                :name="isPwd ? 'visibility_off' : 'visibility'"
+                class="cursor-pointer"
+                @click="isPwd = !isPwd"
+              />
+            </template>
+          </q-input>
+            <q-btn flat color="primary" label="Esqueceu a senha?" no-caps />
+          <q-card-actions vertical>
+            <q-btn color="red" text-color="white" label="Entrar" class="q-mb-md" no-caps/>
+          </q-card-actions>
+        </q-form>
+          <q-separator inset class="q-mb-md" />
+          <q-card-actions vertical>
+            <q-btn outline color="red" text-color="red" icon="mail" label="Entrar com Google" class="q-mb-md" no-caps/>
+          </q-card-actions>
+      </q-card-section>
+      <q-card-section class="q-pt-none">
+        Novo no app?
+      </q-card-section>
+    </q-card-section>
+  </q-page>
 </template>
 
 <script>

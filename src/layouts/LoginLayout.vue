@@ -2,9 +2,6 @@
     <q-layout view="lHh lpr lFf" class="shadow-2 rounded-borders">
       <q-header bordered class="bg-white text-primary">
         <q-toolbar>
-          <div>
-            <q-btn round color="white" icon="menu" />
-          </div>
           <q-toolbar-title class="text-center">
             <q-img
               src="~assets/logo-sanxs.png"
@@ -12,9 +9,6 @@
               style="max-width: 150px; display: block; margin-left: auto; margin-right: auto"
             />
           </q-toolbar-title>
-          <div>
-            <q-btn round color="yellow" icon="alarm" />
-          </div>
         </q-toolbar>
       </q-header>
 
