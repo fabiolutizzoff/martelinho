@@ -1,12 +1,7 @@
 <template>
   <q-page class="flex row flex-center">
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-pa-none" style="max-width: 400px">
-      <q-card-actions align="around" class="q-pb-xl">
-        <q-btn round color="grey-10" icon="my_location" />
-        <q-btn round color="grey-9" glossy icon="local_grocery_store" />
-        <q-btn round color="grey-8" icon="my_location" />
-        <q-btn round color="grey-7" icon="local_grocery_store" />
-      </q-card-actions>
+      <BtnIcon />
       <q-card-actions vertical class="q-px-none q-pb-xl">
         <q-btn push class="q-mb-lg text-italic text-bold" color="red-10" text-color="pink-2" size="25px" label="Gerar orçamento" />
         <q-btn push class="q-mb-lg text-italic text-bold" color="red-9" text-color="red-2" size="25px" label="Promoções da loja" />
@@ -27,5 +22,15 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
+import BtnIcon from 'components/BtnIcon.vue'
 
+export default defineComponent({
+  name: 'MainPage',
+
+  components: {
+    BtnIcon
+  }
+}
+)
 </script>

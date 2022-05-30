@@ -2,10 +2,10 @@
   <q-page class="flex row flex-center">
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-px-none" style="max-width: 400px">
       <q-card-section>
-        <div class="text-h4">Entrar</div>
+        <div class="text-h4">{{ text1 }}</div>
       </q-card-section>
       <q-card-section class="q-pt-none">
-        O app profissional do martelinho de ouro
+        {{ text2 }}
       </q-card-section>
       <q-separator inset />
       <q-card-section class="q-px-none">
@@ -40,5 +40,12 @@
 </template>
 
 <script>
-
+export default {
+  setup () {
+    return {
+      text1: 'Entrar',
+      text2: 'O app profissional do martelinho de ouro'
+    }
+  }
+}
 </script>
