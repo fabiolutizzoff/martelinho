@@ -15,6 +15,13 @@ const routes = [
     ]
   },
   {
+    path: '/auth2',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/MainPage2.vue') }
+    ]
+  },
+  {
     path: '/orcamento1',
     component: () => import('layouts/MainLayout.vue'),
     children: [

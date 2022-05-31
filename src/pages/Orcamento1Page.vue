@@ -4,18 +4,18 @@
       <BtnIcon />
       <q-card-actions vertical class="q-px-none q-pb-none">
         <q-form>
-          <q-badge color="white" text-color="grey">Marca</q-badge>
-          <q-select outlined v-model="marca" :options="marcas" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Modelo</q-badge>
-          <q-select outlined v-model="modelo" :options="modelos" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Preço base</q-badge>
-          <q-input outlined type="number" v-model.number="preco" mask="#.##" fill-mask="0" reverse-fill-mask prefix="R$" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Peça</q-badge>
-          <q-select outlined v-model="peca" :options="pecas" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Tamanho do amassado (cm)</q-badge>
-          <q-input outlined type="number" v-model.number="tamanho" suffix="cm" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Quantidade de amassados</q-badge>
-          <q-select outlined v-model="quantidade" :options="quantidades" class="q-mb-none" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Marca</q-badge>
+          <q-select outlined rounded v-model="marca" :options="marcas" class="q-mb-md" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Modelo</q-badge>
+          <q-select outlined rounded v-model="modelo" :options="modelos" class="q-mb-md" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Preço base</q-badge>
+          <q-input outlined rounded type="number" v-model.number="preco" mask="#.##" fill-mask="0" reverse-fill-mask prefix="R$" class="q-mb-md" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Peça</q-badge>
+          <q-select outlined rounded v-model="peca" :options="pecas" class="q-mb-md" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Tamanho do amassado (cm)</q-badge>
+          <q-input outlined rounded type="number" v-model.number="tamanho" suffix="cm" class="q-mb-md" />
+          <q-badge color="white" text-color="grey" class="q-ml-md">Quantidade de amassados</q-badge>
+          <q-select outlined rounded v-model="quantidade" :options="quantidades" class="q-mb-none" />
           <div class="q-pa-md">
             <q-list>
               <q-item tag="label" v-ripple>
@@ -48,14 +48,14 @@
         <q-separator inset class="q-mb-md" />
       </q-card-actions>
       <q-card-actions align="around">
-        <q-btn push style="min-width: 45%" color="red" size="20px" no-caps>
+        <q-btn rounded to="/auth" style="min-width: 48%" color="red" size="20px" no-caps>
           <div class="row items-center no-wrap">
             <div class="text-center">
               Adicionar<br>mais pontos
             </div>
           </div>
         </q-btn>
-        <q-btn push to="/orcamento2" style="min-width: 45%" color="blue" size="20px" no-caps>
+        <q-btn rounded to="/orcamento2" style="min-width: 48%" color="blue" size="20px" no-caps>
           <div class="row items-center no-wrap">
             <div class="text-center q-pa-none q-ma-none">
               Revisar dados<br>e enviar
