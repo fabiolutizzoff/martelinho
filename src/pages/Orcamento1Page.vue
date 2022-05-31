@@ -15,29 +15,54 @@
           <q-badge color="white" text-color="grey">Tamanho do amassado (cm)</q-badge>
           <q-input outlined type="number" v-model.number="tamanho" suffix="cm" class="q-mb-md" />
           <q-badge color="white" text-color="grey">Quantidade de amassados</q-badge>
-          <q-select outlined v-model="quantidade" :options="quantidades" class="q-mb-md" />
-          <div class="q-pa-md q-gutter-y-sm column">
-          <q-toggle v-model="em_quina" label="Em quina" color="red" />
-          <q-toggle v-model="montagem_externa" label="Montagem externa" color="red" />
-          <q-toggle v-model="montagem_interna" label="Montagem interna" color="red" />
+          <q-select outlined v-model="quantidade" :options="quantidades" class="q-mb-none" />
+          <div class="q-pa-md">
+            <q-list>
+              <q-item tag="label" v-ripple>
+                <q-item-section>
+                  <q-item-label>Em quina</q-item-label>
+                </q-item-section>
+                <q-item-section avatar>
+                  <q-toggle color="blue" v-model="em_quina" val="quina" />
+                </q-item-section>
+              </q-item>
+              <q-item tag="label" v-ripple>
+                <q-item-section>
+                  <q-item-label>Montagem externa</q-item-label>
+                </q-item-section>
+                <q-item-section avatar>
+                  <q-toggle color="green" v-model="montagem_externa" val="mont_externa" />
+                </q-item-section>
+              </q-item>
+              <q-item tag="label" v-ripple>
+                <q-item-section>
+                  <q-item-label>Montagem interna</q-item-label>
+                </q-item-section>
+                <q-item-section avatar>
+                  <q-toggle color="red" v-model="montagem_interna" val="mont_interna" />
+                </q-item-section>
+              </q-item>
+            </q-list>
           </div>
         </q-form>
         <q-separator inset class="q-mb-md" />
       </q-card-actions>
-        <q-btn push class="q-mr-md" style="max-width: 50%" color="red" size="20px" no-caps>
+      <q-card-actions align="around">
+        <q-btn push style="min-width: 45%" color="red" size="20px" no-caps>
           <div class="row items-center no-wrap">
             <div class="text-center">
               Adicionar<br>mais pontos
             </div>
           </div>
         </q-btn>
-        <q-btn push style="max-width: 50%" color="blue" size="20px" no-caps>
+        <q-btn push to="/orcamento2" style="min-width: 45%" color="blue" size="20px" no-caps>
           <div class="row items-center no-wrap">
             <div class="text-center q-pa-none q-ma-none">
               Revisar dados<br>e enviar
             </div>
           </div>
         </q-btn>
+      </q-card-actions>
     </q-card-section>
   </q-page>
 </template>
@@ -47,7 +72,7 @@ import { defineComponent, ref } from 'vue'
 import BtnIcon from 'components/BtnIcon.vue'
 
 export default defineComponent({
-  name: 'MainPage',
+  name: 'Orcamento1Page',
 
   components: {
     BtnIcon
