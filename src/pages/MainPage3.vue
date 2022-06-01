@@ -4,8 +4,7 @@
       <BtnIcon />
       <q-card-actions vertical class="q-px-none q-pb-xl">
         <q-form>
-          <q-badge color="white" text-color="grey" class="q-ml-md">Estados</q-badge>
-          <q-select outlined rounded v-model="estado" :options="estados" class="q-mb-md" option-label="nome" option-value="id" />
+          <p>{{ estados }}</p>
         </q-form>
       </q-card-actions>
     </q-card-section>
@@ -29,8 +28,20 @@ export default defineComponent({
     }
   },
   methods: {
-            curl -s https://app.omie.com.br/api/v1/geral/cidades/ -H 'Content-type: application/json' -d '{"call":"PesquisarCidades","app_key":"38333295000","app_secret":"fed2******************1258","param":[{"pagina":1,"registros_por_pagina":50}]}'      })
-
+    getEstados () {
+      this.$axios.get('https://lucre7combr.pipedrive.com/api/v1/deals:(id,title)?status=won&api_token=a17cd786b809463b1a2d18053d021a349a618991')
+        .then((res) => {
+          this.estados = res.data
+          console.log(res.data)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
+  },
+  mounted () {
+    this.getEstados()
+  }
 }
 )
 </script>
