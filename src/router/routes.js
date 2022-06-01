@@ -22,6 +22,13 @@ const routes = [
     ]
   },
   {
+    path: '/auth3',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/MainPage3.vue') }
+    ]
+  },
+  {
     path: '/orcamento1',
     component: () => import('layouts/MainLayout.vue'),
     children: [

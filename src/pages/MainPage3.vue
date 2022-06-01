@@ -29,20 +29,8 @@ export default defineComponent({
     }
   },
   methods: {
-    getEstados () {
-      this.$axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
-        .then((res) => {
-          this.estados = res.data
-          console.log(res.data)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }
-  },
-  mounted () {
-    this.getEstados()
-  }
+            curl -s https://app.omie.com.br/api/v1/geral/cidades/ -H 'Content-type: application/json' -d '{"call":"PesquisarCidades","app_key":"38333295000","app_secret":"fed2******************1258","param":[{"pagina":1,"registros_por_pagina":50}]}'      })
+
 }
 )
 </script>
