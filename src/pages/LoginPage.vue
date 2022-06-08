@@ -10,9 +10,9 @@
       <q-separator inset />
       <q-card-section class="q-px-none">
         <q-form>
-          <q-badge color="white" text-color="grey">Usuário</q-badge>
+          <q-badge color="white" text-color="grey" class="q-ml-md">Usuário</q-badge>
           <q-input outlined rounded v-model="text" class="q-mb-md" />
-          <q-badge color="white" text-color="grey">Senha</q-badge>
+          <q-badge color="white" text-color="grey" class="q-ml-md">Senha</q-badge>
           <q-input outlined rounded v-model="password" :type="isPwd ? 'password' : 'text'">
             <template v-slot:append>
               <q-icon

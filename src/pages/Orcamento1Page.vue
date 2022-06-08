@@ -23,7 +23,7 @@
                   <q-item-label>Em quina</q-item-label>
                 </q-item-section>
                 <q-item-section avatar>
-                  <q-toggle color="blue" v-model="em_quina" val="quina" />
+                  <q-toggle color="red" v-model="em_quina" val="quina" />
                 </q-item-section>
               </q-item>
               <q-item tag="label" v-ripple>
@@ -31,7 +31,7 @@
                   <q-item-label>Montagem externa</q-item-label>
                 </q-item-section>
                 <q-item-section avatar>
-                  <q-toggle color="green" v-model="montagem_externa" val="mont_externa" />
+                  <q-toggle color="red" v-model="montagem_externa" val="mont_externa" />
                 </q-item-section>
               </q-item>
               <q-item tag="label" v-ripple>
@@ -46,22 +46,8 @@
           </div>
         </q-form>
         <q-separator inset class="q-mb-md" />
-      </q-card-actions>
-      <q-card-actions align="around">
-        <q-btn rounded to="/auth" style="min-width: 48%" color="red" size="20px" no-caps>
-          <div class="row items-center no-wrap">
-            <div class="text-center">
-              Adicionar<br>mais pontos
-            </div>
-          </div>
-        </q-btn>
-        <q-btn rounded to="/orcamento2" style="min-width: 48%" color="blue" size="20px" no-caps>
-          <div class="row items-center no-wrap">
-            <div class="text-center q-pa-none q-ma-none">
-              Revisar dados<br>e enviar
-            </div>
-          </div>
-        </q-btn>
+        <q-btn rounded size="lg" to="/auth" color="red" text-color="white" label="Incluir ponto" class="q-mb-md" no-caps />
+        <q-btn rounded size="lg" to="/auth" color="blue" text-color="white" label="Continuar" class="q-mb-md" no-caps />
       </q-card-actions>
     </q-card-section>
   </q-page>
