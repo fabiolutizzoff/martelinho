@@ -29,17 +29,17 @@ const routes = [
     ]
   },
   {
-    path: '/orcamento1',
+    path: '/orcamentoPonto',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Orcamento1Page.vue') }
+      { path: '', component: () => import('pages/OrcamentoPontoPage.vue') }
     ]
   },
   {
-    path: '/orcamento2',
+    path: '/orcamentoCliente',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Orcamento2Page.vue') }
+      { path: '', component: () => import('pages/OrcamentoClientePage.vue') }
     ]
   },
 

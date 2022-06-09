@@ -29,7 +29,7 @@ export default defineComponent({
   },
   methods: {
     getEstados () {
-      this.$axios.get('https://lucre7combr.pipedrive.com/api/v1/deals:(id,title)?status=won&api_token=a17cd786b809463b1a2d18053d021a349a618991')
+      this.$axios.get('https://lucre7combr.pipedrive.com/api/v1/deals:(title)?status=won&api_token=a17cd786b809463b1a2d18053d021a349a618991')
         .then((res) => {
           this.estados = res.data
           console.log(res.data)

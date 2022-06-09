@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex row flex-center">
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-pa-none" style="max-width: 400px">
-      <BtnIcon />
+      <StepperComponent />
       <q-card-actions vertical class="q-px-none q-pb-none">
         <q-form>
           <q-badge color="white" text-color="grey" class="q-ml-md">Marca</q-badge>
@@ -46,8 +46,51 @@
           </div>
         </q-form>
         <q-separator inset class="q-mb-md" />
-        <q-btn rounded size="lg" to="/auth" color="red" text-color="white" label="Incluir ponto" class="q-mb-md" no-caps />
-        <q-btn rounded size="lg" to="/auth" color="blue" text-color="white" label="Continuar" class="q-mb-md" no-caps />
+        <q-btn rounded size="lg" color="red" text-color="white" label="Incluir ponto" class="q-mb-md" no-caps @click="incluir_pontos = true" />
+      </q-card-actions>
+      <q-dialog v-model="incluir_pontos" persistent full-width>
+        <q-card>
+            <q-card-section>
+              <div class="text-h6">Ponto</div>
+            </q-card-section>
+            <q-separator inset />
+
+            <q-card-section class="q-pt-none">
+              <q-card-actions vertical class="q-px-none q-pb-none">
+                <q-badge color="white" text-color="grey" class="q-ml-md">Peça</q-badge>
+                <q-select outlined rounded v-model="peca" :options="pecas" class="q-mb-md" />
+              </q-card-actions>
+              Ponto incluido com sucesso
+            </q-card-section>
+
+            <q-card-actions align="right">
+              <q-btn rounded label="Incluir" color="primary" v-close-popup />
+            </q-card-actions>
+        </q-card>
+      </q-dialog>
+      <q-separator inset class="q-mb-md" />
+      <q-badge color="white" text-color="grey" class="q-ml-md">Pontos</q-badge>
+      <q-card class="my-card q-mb-md" style="border-radius: 30px">
+        <q-card-section>
+          {{ ponto }}
+        </q-card-section>
+        <q-separator />
+        <q-card-section>
+          {{ dataponto }}
+        </q-card-section>
+      </q-card>
+      <q-card class="my-card q-mb-md" style="border-radius: 30px">
+        <q-card-section>
+          {{ ponto }}
+        </q-card-section>
+        <q-separator />
+        <q-card-section>
+          {{ dataponto }}
+        </q-card-section>
+      </q-card>
+      <q-separator inset class="q-mb-md" />
+      <q-card-actions vertical class="q-pa-none">
+        <q-btn rounded size="lg" to="/OrcamentoCliente" color="blue" text-color="white" label="Continuar" class="q-mb-md" no-caps />
       </q-card-actions>
     </q-card-section>
   </q-page>
@@ -55,16 +98,21 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import BtnIcon from 'components/BtnIcon.vue'
+import StepperComponent from '../components/StepperComponent.vue'
 
 export default defineComponent({
   name: 'Orcamento1Page',
 
   components: {
-    BtnIcon
+    StepperComponent
   },
+
   setup () {
     return {
+      incluir_pontos: ref(false),
+      ponto: ref('1'),
+      dataponto: ref('teste'),
+      step: ref(1),
       marca: ref(null),
       marcas: [
         'FIAT', 'Ford', 'Honda', 'Toyota', 'Audi'

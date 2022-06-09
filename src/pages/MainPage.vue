@@ -3,7 +3,7 @@
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-pa-none" style="max-width: 400px">
       <BtnIcon />
       <q-card-actions vertical class="q-px-none q-pb-xl">
-        <q-btn rounded to="/orcamento1" class="q-mb-lg text-italic text-bold" color="red-10" text-color="pink-2" size="lg" label="Gerar orçamento" />
+        <q-btn rounded to="/orcamentoPonto" class="q-mb-lg text-italic text-bold" color="red-10" text-color="pink-2" size="lg" label="Gerar orçamento" />
         <q-btn rounded class="q-mb-lg text-italic text-bold" color="red-9" text-color="red-2" size="lg" label="Promoções da loja" />
         <q-btn rounded class="q-mb-lg text-italic text-bold" color="red-8" text-color="pink-1" size="lg" label="Cupons especiais" />
         <q-btn rounded class="q-mb-lg text-italic text-bold" color="red-7" text-color="red-1" size="lg" label="Meus dados" />
