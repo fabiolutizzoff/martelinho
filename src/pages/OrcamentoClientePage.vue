@@ -1,7 +1,6 @@
 <template>
   <q-page class="flex row flex-center">
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-pa-none" style="max-width: 400px">
-      <StepperComponent />
       <q-card-actions vertical class="q-px-none q-pb-none">
         <q-form>
           <q-badge color="white" text-color="grey" class="q-ml-md">Nome do cliente</q-badge>
@@ -30,19 +29,14 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import StepperComponent from '../components/StepperComponent.vue'
 
 export default defineComponent({
   name: 'OrcamentoClientePage',
 
-  components: {
-    StepperComponent
-  },
   setup () {
     return {
       ponto: ref('1'),
       dataponto: ref('teste'),
-      step: ref(2),
       cliente: ref(null),
       clientes: [
         'Navaia', 'Barbeiro', 'Esposa', 'Veio', 'Filho'
