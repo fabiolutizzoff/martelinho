@@ -1,6 +1,8 @@
 <template>
   <q-page class="flex row flex-center">
     <q-card-section class="my-card col-12 col-sm-8 col-md-6 q-pa-none" style="max-width: 400px">
+      <q-badge color="white" text-color="grey" class="q-ml-md q-mb-md">Orçamento nº: {{num_orcamento}} </q-badge>
+      <q-separator inset class="q-mb-sm" />
       <q-form>
         <q-card-actions vertical class="q-px-none q-pb-none">
           <q-badge color="white" text-color="grey" class="q-ml-md">Marca</q-badge>
@@ -12,55 +14,55 @@
           <q-separator inset class="q-mb-md" />
           <q-btn rounded size="lg" color="red" text-color="white" label="Clique aqui para incluir o ponto" class="q-mb-md" no-caps @click="incluir_pontos = true" />
         </q-card-actions>
-        <q-dialog v-model="incluir_pontos" persistent full-width>
-          <q-card>
-              <q-card-section class="row items-center q-pb-none">
-                <div class="text-h6">Ponto {{ ponto }}</div>
-                <q-space />
-                <q-btn icon="close" flat round dense v-close-popup />
-              </q-card-section>
-              <q-separator inset />
-              <q-card-section class="q-pt-none">
-                <q-card-actions vertical class="q-px-none q-pb-none">
-                  <q-badge color="white" text-color="grey" class="q-ml-md">Peça</q-badge>
-                  <q-select outlined rounded v-model="peca" :options="pecas" class="q-mb-md" />
-                  <q-badge color="white" text-color="grey" class="q-ml-md">Tamanho do amassado (cm)</q-badge>
-                  <q-input outlined rounded  v-model="tamanho" mask="#,##" fill-mask="0" reverse-fill-mask suffix="cm" class="q-mb-md" />
-                  <q-badge color="white" text-color="grey" class="q-ml-md">Quantidade de amassados</q-badge>
-                  <q-select outlined rounded v-model="quantidade" :options="quantidades" class="q-mb-none" />
-                  <div class="q-pa-md">
-                    <q-list>
-                      <q-item tag="label" v-ripple>
-                        <q-item-section>
-                          <q-item-label>Em quina</q-item-label>
-                        </q-item-section>
-                        <q-item-section avatar>
-                          <q-toggle color="red" v-model="em_quina" val="quina" />
-                        </q-item-section>
-                      </q-item>
-                      <q-item tag="label" v-ripple>
-                        <q-item-section>
-                          <q-item-label>Montagem externa</q-item-label>
-                        </q-item-section>
-                        <q-item-section avatar>
-                          <q-toggle color="red" v-model="montagem_externa" val="mont_externa" />
-                        </q-item-section>
-                      </q-item>
-                      <q-item tag="label" v-ripple>
-                        <q-item-section>
-                          <q-item-label>Montagem interna</q-item-label>
-                        </q-item-section>
-                        <q-item-section avatar>
-                          <q-toggle color="red" v-model="montagem_interna" val="mont_interna" />
-                        </q-item-section>
-                      </q-item>
-                    </q-list>
-                  </div>
-                </q-card-actions>
-              </q-card-section>
-              <q-card-actions align="right">
-                <q-btn rounded label="Incluir" color="primary" v-close-popup style="min-width: 50%;" />
+        <q-dialog v-model="incluir_pontos" persistent>
+          <q-card style="width: 400px; max-width: 95vw;">
+            <q-card-section class="row items-center q-pb-none">
+              <div class="text-h6">Ponto {{ ponto }}</div>
+              <q-space />
+              <q-btn icon="close" flat round dense v-close-popup />
+            </q-card-section>
+            <q-separator inset />
+            <q-card-section class="q-pt-none">
+              <q-card-actions vertical class="q-px-none q-pb-none">
+                <q-badge color="white" text-color="grey" class="q-ml-md">Peça</q-badge>
+                <q-select outlined rounded v-model="peca" :options="pecas" class="q-mb-md" />
+                <q-badge color="white" text-color="grey" class="q-ml-md">Tamanho do amassado (cm)</q-badge>
+                <q-input outlined rounded  v-model="tamanho" mask="#,##" fill-mask="0" reverse-fill-mask suffix="cm" class="q-mb-md" />
+                <q-badge color="white" text-color="grey" class="q-ml-md">Quantidade de amassados</q-badge>
+                <q-select outlined rounded v-model="quantidade" :options="quantidades" class="q-mb-none" />
+                <div class="q-pa-md">
+                  <q-list>
+                    <q-item tag="label" v-ripple>
+                      <q-item-section>
+                        <q-item-label>Em quina</q-item-label>
+                      </q-item-section>
+                      <q-item-section avatar>
+                        <q-toggle color="red" v-model="em_quina" val="quina" />
+                      </q-item-section>
+                    </q-item>
+                    <q-item tag="label" v-ripple>
+                      <q-item-section>
+                        <q-item-label>Montagem externa</q-item-label>
+                      </q-item-section>
+                      <q-item-section avatar>
+                        <q-toggle color="red" v-model="montagem_externa" val="mont_externa" />
+                      </q-item-section>
+                    </q-item>
+                    <q-item tag="label" v-ripple>
+                      <q-item-section>
+                        <q-item-label>Montagem interna</q-item-label>
+                      </q-item-section>
+                      <q-item-section avatar>
+                        <q-toggle color="red" v-model="montagem_interna" val="mont_interna" />
+                      </q-item-section>
+                    </q-item>
+                  </q-list>
+                </div>
               </q-card-actions>
+            </q-card-section>
+            <q-card-actions align="right">
+              <q-btn rounded label="Incluir" color="primary" v-close-popup style="min-width: 50%;" />
+            </q-card-actions>
           </q-card>
         </q-dialog>
         </q-form>
@@ -111,6 +113,7 @@ export default defineComponent({
 
   setup () {
     return {
+      num_orcamento: (20220614001),
       incluir_pontos: ref(false),
       ponto: ref('1'),
       dataponto: ref('teste'),
